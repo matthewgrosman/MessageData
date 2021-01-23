@@ -8,7 +8,6 @@
 import fb_stats
 import excel
 import calculations
-import graph
 import printing
 import file_handling
 import imessage_stats
@@ -21,10 +20,6 @@ if __name__ == "__main__":
 
     imessage_soup = file_handling.get_imessage(name)
     totals_data, dates_data, word_data = imessage_stats.convo_totals(imessage_soup, totals_data, word_data, dates_data)
-
-    #graph.dict_to_graph(totals_data, "Totals", name)
-    #graph.dict_to_graph(dates_data, "Date", name)
-    #graph.dict_to_graph(word_data, "Word", name)
 
     excel.write_to_excel(totals_data, "totals", name)
     excel.write_to_excel(dates_data, "dates", name)
